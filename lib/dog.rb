@@ -1,3 +1,5 @@
+require 'pry'
+
 class Dog
     attr_reader :name
     @@all=[]
@@ -5,13 +7,14 @@ class Dog
         @@all<<name
         @name=name
     end
-    def all
+    def self.all
         puts @@all
     end
-    def clear_all
+    def self.clear_all
         @@all=[]
     end
-    def new(name)
+    def self.new(name)
         @@all<<name
     end
+binding.pry
 end
