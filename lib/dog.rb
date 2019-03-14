@@ -1,20 +1,20 @@
 require 'pry'
 
 class Dog
-    attr_reader :name
     @@all=[]
-    def initialize(name)
-        @@all<<name
-        @name=name
+    def initialize(dog_name)
+        @@all<<self
+        @name=dog_name
     end
+    attr_reader :name
+    binding.pry
     def self.all
         puts @@all
     end
     def self.clear_all
-        @@all=[]
+        @@all.clear
     end
-    def self.new(name)
-        @@all<<name
+    def name
+        return @name
     end
-binding.pry
 end
