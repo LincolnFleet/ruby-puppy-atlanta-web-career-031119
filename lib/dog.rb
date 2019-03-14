@@ -3,13 +3,11 @@ require 'pry'
 class Dog
     @@all=[]
     def initialize(dog_name)
-        @@all<<self
         @name=dog_name
+        @@all<<self
     end
-    attr_reader :name
-    binding.pry
     def self.all
-        puts @@all
+        @@all.each {|item| puts item.name}
     end
     def self.clear_all
         @@all.clear
