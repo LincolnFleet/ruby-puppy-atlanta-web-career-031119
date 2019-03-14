@@ -1,11 +1,12 @@
 class Dog
-    attr_accessor :name
+    attr_reader :name
     @@all=[]
     def initialize(name)
         @@all<<name
+        @name=name
     end
     def all
-        @@all.each {|item| puts item}
+        puts @@all
     end
     def clear_all
         @@all=[]
